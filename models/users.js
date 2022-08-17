@@ -14,8 +14,11 @@ class User {
     static get all() {
         return new Promise (async (resolve, reject) => {
             try {
+                console.log('1');
                 const userData = await db.query('select * from users;')
+                console.log('2');
                 const users = userData.rows.map(u => new User(u))
+                console.log('3');
                 resolve(users);
                 
             } catch (err) {

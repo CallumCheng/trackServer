@@ -9,22 +9,4 @@ const pool = new Pool({
   })
 
 
-//    pool.query(`SELECT * FROM users;`, (err, res) => {
-//     if (err) {
-//         console.log("Error - Failed to select all from Users");
-//         console.log(err);
-//     }
-//     else{
-//         console.log(res.rows);
-//     }
-//     pool.end()
-// });
-
-// pool.query(`INSERT INTO users(name,email,password)VALUES($1,$2,$3)`, ['name','email','password'], (err, res) => {
-//     if (err) {
-//         console.log("Error - Failed to insert data into Users");
-//         console.log(err);
-//     }
-// });
-
 module.exports = pool;
