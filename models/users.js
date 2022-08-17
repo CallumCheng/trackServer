@@ -14,12 +14,9 @@ class User {
     static get all() {
         return new Promise (async (resolve, reject) => {
             try {
-                console.log('1');
                 // console.log(db);
                 const userData = await db.query('SELECT * FROM users;')
-                console.log('2');
                 const users = userData.rows.map(u => new User(u))
-                console.log('3');
                 resolve(users);
                 
             } catch (err) {
@@ -41,18 +38,6 @@ class User {
             }
         });
     }
-
-   /* static create(name){
-        return new Promise (async (resolve, reject) => {
-            try {
-                let userData = await db.query('INSERT INTO users (name) VALUES ($1) RETURNING *;', [ name ]);
-                let user = new User(userData.rows[0]);
-                resolve (user);
-            } catch (err) {
-                reject('user could not be created');
-            };
-        });
-    };*/
 
 
     static findOrCreateByName(name){
